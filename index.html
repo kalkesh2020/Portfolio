@@ -1,527 +1,1211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kalkesh Shakapur | Video Editor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">  
+    <title>Kalkesh Shakapur | Video Editor & Post-Production Specialist</title>
+    <meta name="description" content="Portfolio of Kalkesh Shakapur — Video Editor, Post-Production Specialist and Graphic Designer. Specializing in video editing, motion graphics, VFX, AI-enhanced production and visual storytelling.">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">KALKESH<span>.</span></a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a
+                    href="PASTE_YOUR_RESUME_LINK_HERE"
+                    target="_blank"
+                    class="resume-link"
+                >
+                    Resume
+                </a>
+
+                <a href="#contact" class="talk-btn">
+                    Let's Talk
+                </a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
 
 
+    <main>
 
-  <!-- PARTICLES -->
-  <canvas id="particles"></canvas>
+        <!-- =========================
+             HERO
+        ========================== -->
 
+        <section class="hero" id="home">
 
-  <div class="main-wrapper">
+            <div class="container hero-container">
 
+                <div class="hero-content">
 
-  <!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">KALKESH</div>
+                    <div class="eyebrow">
+                        <span class="status-dot"></span>
+                        VIDEO EDITOR & POST-PRODUCTION SPECIALIST
+                    </div>
 
-  <nav class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#what-i-do">Experience</a>
-    <a href="#ai">AI Work</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-  </nav>
+                    <h1>
+                        Turning footage
+                        <br>
+                        into <span>stories</span>
+                        <br>
+                        that move.
+                    </h1>
 
- <div class="nav-actions">
-<a href="https://drive.google.com/file/d/1SGVuudu0gp5seHMO3ei4eczTOwDuI9D-/view?usp=drive_link" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   class="btn-outline">
-   My Resume
-</a>
+                    <p class="hero-description">
+                        I'm Kalkesh Shakapur, a Video Editor & Post-Production
+                        Specialist creating engaging visual content across brands,
+                        real estate, social media, podcasts, music, film, corporate
+                        and events.
+                    </p>
 
+                    <div class="hero-buttons">
 
-    <!-- Contact Button -->
-    <a href="#contact-cta" class="btn-primary">
-      Contact
-    </a>
-  </div>
-</header>
+                        <a href="#work" class="primary-btn">
+                            View My Work
+                            <span>↗</span>
+                        </a>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-content reveal instant">
-      <h1>Kalkesh Shakapur</h1>
-      <h2>Video Editor | Graphic Designer | Social Media Executive | AI Video Specialist</h2>
-      <p>
-        I create high-impact visual content that blends storytelling, strategy, and AI-driven creativity to elevate brands and drive engagement.
-      </p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
+                        <a href="#contact" class="secondary-btn">
+                            Get In Touch
+                        </a>
+
+                    </div>
+
+                </div>
 
 
+                <div class="hero-meta">
 
-<!-- GRAPHIC DESIGN WORK -->
-<section id="graphic-work" class="section">
+                    <div class="hero-meta-item">
+                        <span>BASED IN</span>
+                        <strong>INDIA</strong>
+                    </div>
 
+                    <div class="hero-meta-item">
+                        <span>FOCUS</span>
+                        <strong>POST-PRODUCTION</strong>
+                    </div>
 
-  <div class="section-container">
-    <h2 class="section-title">Graphic Design Work</h2>
+                    <div class="hero-meta-item">
+                        <span>AVAILABLE FOR</span>
+                        <strong>FREELANCE</strong>
+                    </div>
 
-    <div class="carousel">
-      <div class="carousel-track">
+                </div>
 
-<div class="design-card">
-  <img src="assets/imgs/d1.png" alt="Design 1">
-</div>
+            </div>
 
-<div class="design-card">
-  <img src="assets/imgs/d2.png" alt="Design 2">
-</div>
-
-<div class="design-card">
-  <img src="assets/imgs/d3.png" alt="Design 3">
-</div>
-
-<div class="design-card">
-  <img src="assets/imgs/d4.png" alt="Design 4">
-</div>
-
-<div class="design-card">
-  <img src="assets/imgs/d5.png" alt="Design 5">
-</div>
-
-<div class="design-card">
-  <img src="assets/imgs/d6.png" alt="Design 6">
-</div>
-
-<div class="design-card">
-  <img src="assets/imgs/d7.png" alt="Design 7">
-</div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
+        </section>
 
 
-  <!-- ABOUT -->
-<section id="about" class="section reveal">
-  <div class="section-container about-container">
+        <!-- =========================
+             SELECTED WORK
+        ========================== -->
 
-    <div class="about-image">
-      <img src="assets/imgs/About.png" alt="Kalkesh">
-    </div>
+        <section class="section work-section" id="work">
 
-    <div class="about-content">
-      <h2 class="about-title">About Me</h2>
+            <div class="container">
 
-      <p>
-        I am a creative Video Editor & Graphic Designer specializing in impactful visual storytelling and digital brand experiences.
-      </p>
+                <div class="section-heading">
 
-      <p>
-        My work focuses on creating engaging content for social media, promotional campaigns, and modern digital platforms with a strong emphasis on quality, creativity, and results.
-      </p>
+                    <div>
+                        <span class="section-number">01</span>
+                        <span class="section-label">SELECTED WORK</span>
+                    </div>
 
-      <!-- EXPERIENCE -->
-      <div class="experience-box">
-        <h3 class="experience-title">Professional Experience</h3>
+                    <p>
+                        A selection of projects across editing,
+                        storytelling, motion graphics and AI-assisted production.
+                    </p>
 
-        <div class="job-role">
-          <h4>Video Editor & Graphic Designer</h4>
-          <span class="company-duration">
-            SS Technologies, Goa | Oct 2024 – Present
-          </span>
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="work-filters">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="showreel">
+                        Showreel
+                    </button>
+
+                    <button class="filter-btn" data-filter="real-estate">
+                        Real Estate
+                    </button>
+
+                    <button class="filter-btn" data-filter="social">
+                        Social Media
+                    </button>
+
+                    <button class="filter-btn" data-filter="podcast">
+                        Podcast
+                    </button>
+
+                    <button class="filter-btn" data-filter="brand">
+                        Brand
+                    </button>
+
+                    <button class="filter-btn" data-filter="film">
+                        Film
+                    </button>
+
+                    <button class="filter-btn" data-filter="corporate">
+                        Corporate & Events
+                    </button>
+
+                    <button class="filter-btn" data-filter="ai">
+                        AI Video
+                    </button>
+
+                </div>
+
+
+                <!-- PROJECT GRID -->
+
+                <div class="work-grid">
+
+
+                    <!-- SHOWREEL -->
+
+                    <article class="project-card featured-card" data-category="showreel">
+
+                        <a
+                            href="PASTE_SHOWREEL_YOUTUBE_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-showreel">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    SHOWREEL
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        SHOWREEL
+                                    </span>
+
+                                    <h3>
+                                        Selected Editing Work
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    2026
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- REAL ESTATE -->
+
+                    <article class="project-card" data-category="real-estate">
+
+                        <a
+                            href="PASTE_REAL_ESTATE_YOUTUBE_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-realestate">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    REAL ESTATE
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        REAL ESTATE
+                                    </span>
+
+                                    <h3>
+                                        Property & Real Estate Films
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SOCIAL MEDIA -->
+
+                    <article class="project-card" data-category="social">
+
+                        <a
+                            href="PASTE_SOCIAL_MEDIA_YOUTUBE_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-social">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    SOCIAL MEDIA
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        SOCIAL MEDIA
+                                    </span>
+
+                                    <h3>
+                                        Reels & Short-Form Content
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PODCAST -->
+
+                    <article class="project-card" data-category="podcast">
+
+                        <a
+                            href="PASTE_PODCAST_YOUTUBE_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-podcast">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    PODCAST
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        PODCAST
+                                    </span>
+
+                                    <h3>
+                                        Podcast Editing
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- BRAND PROMO -->
+
+                    <article class="project-card" data-category="brand">
+
+                        <a
+                            href="PASTE_BRAND_VIDEO_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-brand">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    BRAND
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        BRAND PROMOTION
+                                    </span>
+
+                                    <h3>
+                                        Promotional & Marketing Videos
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- FILM -->
+
+                    <article class="project-card" data-category="film">
+
+                        <a
+                            href="PASTE_FILM_YOUTUBE_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-film">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    FILM
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        FILM
+                                    </span>
+
+                                    <h3>
+                                        Short Film & Cinematic Editing
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- CORPORATE -->
+
+                    <article class="project-card" data-category="corporate">
+
+                        <a
+                            href="PASTE_CORPORATE_VIDEO_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-corporate">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    CORPORATE
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        CORPORATE & EVENTS
+                                    </span>
+
+                                    <h3>
+                                        Corporate & Event Content
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- AI VIDEO -->
+
+                    <article class="project-card" data-category="ai">
+
+                        <a
+                            href="PASTE_AI_VIDEO_LINK_HERE"
+                            class="project-link"
+                            target="_blank"
+                        >
+
+                            <div class="project-image project-ai">
+                                <div class="image-overlay"></div>
+
+                                <div class="project-play">
+                                    ▶
+                                </div>
+
+                                <span class="project-type">
+                                    AI VIDEO
+                                </span>
+
+                                <span class="project-arrow">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div class="project-info">
+
+                                <div>
+                                    <span class="project-category">
+                                        AI VIDEO
+                                    </span>
+
+                                    <h3>
+                                        AI-Assisted Visual Storytelling
+                                    </h3>
+                                </div>
+
+                                <span class="project-year">
+                                    2026
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section about-section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-number">02</span>
+                        <span class="section-label">ABOUT ME</span>
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-image">
+
+                        <img
+                            src="assets/imgs/About.png"
+                            alt="Kalkesh Shakapur"
+                        >
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <h2>
+                            Editing isn't just about
+                            <span>cutting clips.</span>
+                        </h2>
+
+                        <p>
+                            It's about understanding the story, the audience
+                            and the emotion behind every frame.
+                        </p>
+
+                        <p>
+                            I'm Kalkesh Shakapur, a Video Editor and
+                            Post-Production Specialist with experience working
+                            across social media, real estate, promotional
+                            content, podcasts, music videos, short films,
+                            corporate projects and events.
+                        </p>
+
+                        <p>
+                            My approach combines strong editing fundamentals
+                            with motion graphics, visual effects, sound design,
+                            compositing and AI-assisted workflows to create
+                            content that feels intentional and engaging.
+                        </p>
+
+                        <div class="about-signature">
+                            KALKESH SHAKAPUR
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================== -->
+
+        <section class="section experience-section" id="experience">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-number">03</span>
+                        <span class="section-label">EXPERIENCE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="experience-list">
+
+
+                    <!-- EXPERIENCE 1 -->
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            APR 2026
+                            <span>—</span>
+                            AUG 2026
+                        </div>
+
+                        <div class="experience-main">
+
+                            <span class="experience-role">
+                                EDIT SUPERVISOR
+                            </span>
+
+                            <h3>
+                                90's Studio
+                            </h3>
+
+                            <p>
+                                Worked across post-production projects
+                                including music videos, real estate content,
+                                short films, reels, podcasts and brand
+                                promotions. Managed editing workflows and
+                                maintained creative consistency across projects.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPERIENCE 2 -->
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            OCT 2024
+                            <span>—</span>
+                            PRESENT
+                        </div>
+
+                        <div class="experience-main">
+
+                            <span class="experience-role">
+                                VIDEO EDITOR & GRAPHIC DESIGNER
+                            </span>
+
+                            <h3>
+                                SS Technologies — Goa
+                            </h3>
+
+                            <p>
+                                Creating video and graphic content for
+                                marketing and digital communication, including
+                                social media content, promotional videos,
+                                motion graphics and AI-enhanced visual
+                                production.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section class="section skills-section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-number">04</span>
+                        <span class="section-label">CAPABILITIES</span>
+                    </div>
+
+                    <p>
+                        A combination of creative thinking, technical
+                        post-production and modern AI workflows.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">01</span>
+
+                        <h3>
+                            Video Editing
+                        </h3>
+
+                        <p>
+                            Story-driven editing, pacing, transitions,
+                            sound design, color correction and social-first
+                            content.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">02</span>
+
+                        <h3>
+                            Motion Graphics & VFX
+                        </h3>
+
+                        <p>
+                            Kinetic typography, tracking, compositing,
+                            visual effects and dynamic graphic elements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">03</span>
+
+                        <h3>
+                            Post-Production
+                        </h3>
+
+                        <p>
+                            Complete post-production workflows from raw
+                            footage to polished final delivery.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">04</span>
+
+                        <h3>
+                            AI-Enhanced Production
+                        </h3>
+
+                        <p>
+                            AI-assisted visual generation, enhancement,
+                            B-roll creation and creative storytelling.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">05</span>
+
+                        <h3>
+                            Graphic Design
+                        </h3>
+
+                        <p>
+                            Posters, thumbnails, social creatives,
+                            promotional graphics and visual branding.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TOOLS
+        ========================== -->
+
+        <section class="section tools-section">
+
+            <div class="container">
+
+                <div class="tools-layout">
+
+                    <div class="tools-title">
+
+                        <span class="section-number">05</span>
+
+                        <h2>
+                            Tools I use
+                        </h2>
+
+                    </div>
+
+
+                    <div class="tools-list">
+
+                        <div class="tool-group">
+
+                            <span>EDITING</span>
+
+                            <div class="tool-items">
+
+                                <span>Adobe Premiere Pro</span>
+                                <span>DaVinci Resolve</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tool-group">
+
+                            <span>MOTION & VFX</span>
+
+                            <div class="tool-items">
+
+                                <span>Adobe After Effects</span>
+                                <span>Tracking & Compositing</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tool-group">
+
+                            <span>DESIGN</span>
+
+                            <div class="tool-items">
+
+                                <span>Adobe Photoshop</span>
+                                <span>Canva</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tool-group">
+
+                            <span>AI WORKFLOW</span>
+
+                            <div class="tool-items">
+
+                                <span>AI Visual Generation</span>
+                                <span>AI Enhancement</span>
+                                <span>AI Storytelling</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             AI PROJECT
+        ========================== -->
+
+        <section class="section ai-section">
+
+            <div class="container">
+
+                <div class="ai-card">
+
+                    <div class="ai-content">
+
+                        <span class="ai-label">
+                            AI & INNOVATION
+                        </span>
+
+                        <h2>
+                            AI filmmaking,
+                            <br>
+                            built around
+                            <span>story.</span>
+                        </h2>
+
+                        <p>
+                            My AI filmmaking workflow combines generative
+                            tools with traditional editing and post-production
+                            to create cinematic visual stories.
+                        </p>
+
+                        <a
+                            href="PASTE_AI_FILM_YOUTUBE_LINK_HERE"
+                            target="_blank"
+                            class="primary-btn"
+                        >
+                            Watch AI Short Film
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="ai-details">
+
+                        <div class="ai-detail">
+
+                            <strong>
+                                OFFICIAL SCREENING SELECTION
+                            </strong>
+
+                            <span>
+                                India AI Impact Summit 2026
+                            </span>
+
+                        </div>
+
+
+                        <div class="ai-detail">
+
+                            <strong>
+                                WORKFLOW
+                            </strong>
+
+                            <span>
+                                AI Generation + Editing + VFX + Sound
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GRAPHIC DESIGN
+        ========================== -->
+
+        <section class="section design-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-number">06</span>
+                        <span class="section-label">GRAPHIC DESIGN</span>
+                    </div>
+
+                    <p>
+                        Supporting visual design work for digital content,
+                        campaigns and creative projects.
+                    </p>
+
+                </div>
+
+
+                <div class="design-grid">
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d1.png" alt="Graphic Design Work">
+                    </div>
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d2.png" alt="Graphic Design Work">
+                    </div>
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d3.png" alt="Graphic Design Work">
+                    </div>
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d4.png" alt="Graphic Design Work">
+                    </div>
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d5.png" alt="Graphic Design Work">
+                    </div>
+
+                    <div class="design-item">
+                        <img src="assets/imgs/d6.png" alt="Graphic Design Work">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="section contact-section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-heading">
+
+                        <span class="section-number">
+                            07
+                        </span>
+
+                        <span class="section-label">
+                            CONTACT
+                        </span>
+
+                        <h2>
+                            Have a project
+                            <br>
+                            in mind?
+                        </h2>
+
+                    </div>
+
+
+                    <div class="contact-content">
+
+                        <p>
+                            Whether you need a social media edit,
+                            real estate video, promotional film,
+                            podcast edit or complete post-production —
+                            let's create something strong.
+                        </p>
+
+
+                        <a
+                            href="mailto:kalkeshshakapur5273@gmail.com"
+                            class="email-link"
+                        >
+                            kalkeshshakapur5273@gmail.com
+                            <span>↗</span>
+                        </a>
+
+
+                        <div class="social-links">
+
+                            <a
+                                href="PASTE_INSTAGRAM_LINK_HERE"
+                                target="_blank"
+                            >
+                                Instagram
+                            </a>
+
+                            <a
+                                href="PASTE_LINKEDIN_LINK_HERE"
+                                target="_blank"
+                            >
+                                LinkedIn
+                            </a>
+
+                            <a
+                                href="PASTE_YOUTUBE_CHANNEL_LINK_HERE"
+                                target="_blank"
+                            >
+                                YouTube
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-container">
+
+            <div class="footer-logo">
+                KALKESH<span>.</span>
+            </div>
+
+            <p>
+                Video Editor & Post-Production Specialist
+            </p>
+
+            <span class="footer-copy">
+                © <span id="year"></span> Kalkesh Shakapur
+            </span>
+
         </div>
 
-        <ul class="experience-list">
-          <li>Produce high-quality video content for social media and marketing campaigns.</li>
-          <li>Design creative graphics and branding materials.</li>
-          <li>Create motion graphics and engaging visual storytelling content.</li>
-          <li>Support digital marketing and content growth strategies.</li>
-          <li>Leverage AI tools to enhance workflow efficiency.</li>
-        </ul>
+    </footer>
 
-      </div>
 
-    </div>
+    <script src="script.js"></script>
 
-  </div>
-</section>
-
-
-<!-- WHAT I DO -->
-<section id="what-i-do" class="section reveal">
-  <div class="section-container">
-    <h2 class="section-title">What I Do</h2>
-
-    <div class="what-grid">
-
-      <div class="what-card">
-        <h4>Video Editing & Post-Production</h4>
-        <p>Craft high-impact promotional, corporate, and digital content with cinematic storytelling and precision editing.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Graphic Design & Visual Branding</h4>
-        <p>Design compelling visuals, brand assets, and marketing creatives aligned with identity and audience psychology.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Social Media Content & Strategy</h4>
-        <p>Create and optimize platform-specific content while managing brand presence and engagement growth.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Motion Graphics & Visual Effects</h4>
-        <p>Develop dynamic motion graphics, transitions, and immersive visual elements that elevate storytelling.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Green Screen & Color Grading</h4>
-        <p>Deliver clean compositing, professional color correction, and cinematic-grade finishing.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Sound Design & Audio Enhancement</h4>
-        <p>Enhance visual narratives through strategic sound design and immersive audio detailing.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>AI-Powered Creative Production</h4>
-        <p>Leverage AI tools for workflow automation, concept visualization, and next-generation digital storytelling.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Corporate & Event Productions</h4>
-        <p>Produce professional event and corporate videos with refined motion design and brand-focused execution.</p>
-      </div>
-
-      <div class="what-card">
-        <h4>Creative Collaboration & Execution</h4>
-        <p>Collaborate with marketing and creative teams to deliver projects efficiently under tight deadlines.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- AI SECTION -->
-  <section id="ai" class="section reveal">
-    <div class="section-container">
-      <h2 class="section-title">AI & Innovation</h2>
-
-      <div class="exp-card">
-        <h3>AI Short Film – Official Screening Selection</h3>
-        <span>India AI Impact Summit 2026</span>
-
-        <p>
-          Conceptualized and produced a cinematic AI-generated short film selected for official screening. Built a complete AI-driven production pipeline using advanced prompt engineering and AI workflows.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section reveal">
-    <div class="section-container">
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3>🎬 Video Editing</h3>
-          <p>Premiere Pro • After Effects • DaVinci • Motion Graphics</p>
-          <div class="progress">
-            <div class="progress-bar" data-width="90%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3>🎨 Graphic Design</h3>
-          <p>Photoshop • Canva • Composition • Clean Aesthetics</p>
-          <div class="progress">
-            <div class="progress-bar" data-width="85%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3>🤖 AI Workflow</h3>
-          <p>ChatGPT • Gemini Veo • PixVerse • Kling AI • ElevenLabs</p>
-          <div class="progress">
-            <div class="progress-bar" data-width="85%"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section reveal">
-    <div class="section-container">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects-grid">
-
-
-
-
-
-                <div class="project-card">
-          <a href="https://youtube.com/shorts/XaqcyhjJZvY?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/XaqcyhjJZvY/maxresdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>S.S.Technologies marketting promo 1</h3>
-            
-          </div>
-        </div>
-
-
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/oSfjKgfr21A?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/oSfjKgfr21A/maxresdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>S.S.Technologies marketting promo 2</h3>
-          
-          </div>
-        </div>
-
-
-
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/YQMWlbOwcYE?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/YQMWlbOwcYE/maxresdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Asterix Hr - App Promo</h3>
-            
-          </div>
-        </div>
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtu.be/psqe970nTlE?si=XpHBewYGAqGhviIn" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/psqe970nTlE/hqdefault.jpg" alt="Brand Campaign">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Motion Graphics - Brand Promo</h3>
-          </div>
-        </div>
-
-
-        <div class="project-card">
-          <a href="https://youtu.be/KQHxbuGsd4w?si=qI2rokgj-0_vtwm_" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/KQHxbuGsd4w/maxresdefault.jpg" alt="AI Film">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>AI Short Film</h3>
-          </div>
-        </div>
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/fAx3iAQltXo?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/fAx3iAQltXo/maxresdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Documentry Style Edit</h3>
-          </div>
-        </div>
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/ClHQfk-E1nU?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/ClHQfk-E1nU/hqdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Text Promos</h3>
-          </div>
-        </div>
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/TzK4_DQZU24?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/TzK4_DQZU24/maxresdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Pony Needles | Needle Industries (India)</h3>
-            
-          </div>
-        </div>
-
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/GhaY90Izrv8?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/GhaY90Izrv8/hqdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Goa Developer’s Summit 2.0 – promo 1</h3>
-          </div>
-        </div>
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/Czym8i5674Y?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/Czym8i5674Y/hqdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Goa Developer’s Summit 2.0 – promo 2 </h3>
-          </div>
-        </div>
-
-
-
-
-          <div class="project-card">
-          <a href="https://youtube.com/shorts/4sWgMyUm4t0?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/4sWgMyUm4t0/hqdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Laghu Udyog Bharati - promo 1</h3>
-           
-          </div>
-        </div>
-
-
-
-
-        <div class="project-card">
-          <a href="https://youtube.com/shorts/8WHGRR_pVjw?feature=share" target="_blank" class="project-thumbnail">
-            <img src="https://img.youtube.com/vi/8WHGRR_pVjw/hqdefault.jpg" alt="Corporate Promo">
-            <div class="play-overlay">▶</div>
-          </a>
-          <div class="project-content">
-            <h3>Laghu Udyog Bharati - promo 2</h3>
-           
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-  </section>
-  <script src="script.js"></script>
-
-    </div> <!-- END main-wrapper -->
-
-
-
-  <section id="contact-cta" class="contact-cta">
-
-  <div class="cta-content">
-
-    <span class="cta-badge">🚀 Let’s Work Together</span>
-
-    <h2>
-      Ready to Transform <br>
-      <span>Your Brand Presence?</span>
-    </h2>
-
-    <p>
-      Let’s craft high-impact visuals, AI-powered storytelling, and strategic
-      content that elevates your brand and drives measurable engagement.
-    </p>
-
-    <div class="cta-buttons">
-      <a href="mailto:kalkeshshakapur5273@gmail.com" class="cta-primary">
-        Start a Project
-      </a>
-
-      <a href="https://drive.google.com/file/d/1SGVuudu0gp5seHMO3ei4eczTOwDuI9D-/view?usp=drive_link" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="cta-secondary">
-       Download Resume
-      </a>
-
-    </div>
-
-    <!-- Contact Info Row -->
-    <div class="cta-contact-row">
-      <div class="cta-contact-item">
-        <h4>Email</h4>
-        <p>
-         <a href="mailto:kalkeshshakapur5273@gmail.com" class="cta-email">
-            kalkeshshakapur5273@gmail.com
-         </a>
-      </p>
-      </div>
-
-      <div class="cta-contact-item">
-        <h4>Call</h4>
-        <p>7758084728</p>
-      </div>
-
-      <div class="cta-contact-item">
-        <h4>Social</h4>
-        <div class="cta-socials">
-          <a href="https://www.instagram.com/kalkeshshakapur?igsh=dmVjY2twamVjb3h5" target="_blank" rel="noopener noreferrer">Instagram</a>
-  
-          <a href="https://www.youtube.com/@oiikrad20" target="_blank" rel="noopener noreferrer">YouTube</a>
-  
-          <a href="https://www.linkedin.com/in/kalkesh-shakapur-725103334" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-
-  
-<!-- Divider Line -->
-<div class="footer-divider"></div>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <p>© 2026 Kalkesh Shakapur. All Rights Reserved.</p>
-</footer>
+</body>
+</html>
