@@ -110,6 +110,152 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       YOUTUBE THUMBNAIL AUTO LOAD
+    ===================================================== */
+
+    const youtubeLinks = document.querySelectorAll(
+        ".project-card a.project-link"
+    );
+
+
+    youtubeLinks.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        /* Ignore empty and placeholder links */
+
+        if (
+            !href ||
+            href.includes("PASTE_")
+        ) {
+            return;
+        }
+
+
+        let videoId = null;
+
+
+        /* =================================================
+           EXTRACT YOUTUBE VIDEO ID
+        ================================================= */
+
+        try {
+
+            const url = new URL(href);
+
+            const hostname = url.hostname.replace("www.", "");
+
+
+            /* youtu.be/VIDEO_ID */
+
+            if (hostname === "youtu.be") {
+
+                videoId = url.pathname.substring(1);
+
+            }
+
+
+            /* youtube.com/... */
+
+            else if (hostname === "youtube.com") {
+
+                /* YouTube Shorts */
+
+                if (url.pathname.startsWith("/shorts/")) {
+
+                    videoId =
+                        url.pathname
+                            .split("/shorts/")[1]
+                            .split("/")[0];
+
+                }
+
+
+                /* Normal YouTube video */
+
+                else {
+
+                    videoId = url.searchParams.get("v");
+
+                }
+
+            }
+
+        } catch (error) {
+
+            console.log(
+                "Could not read YouTube link:",
+                href
+            );
+
+        }
+
+
+        /* =================================================
+           LOAD THUMBNAIL
+        ================================================= */
+
+        if (videoId) {
+
+            const imageContainer =
+                link.querySelector(".project-image");
+
+
+            if (imageContainer) {
+
+                /* Clean video ID */
+
+                videoId =
+                    videoId
+                        .split("?")[0]
+                        .split("&")[0];
+
+
+                /* Create thumbnail */
+
+                const thumbnail =
+                    document.createElement("img");
+
+
+                thumbnail.src =
+                    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+
+                thumbnail.alt =
+                    "YouTube Video Thumbnail";
+
+
+                thumbnail.className =
+                    "youtube-thumbnail";
+
+
+                /* Add thumbnail */
+
+                imageContainer.prepend(thumbnail);
+
+
+                /* =================================================
+                   FALLBACK THUMBNAIL
+                   If maxresdefault is unavailable
+                ================================================= */
+
+                thumbnail.onerror = function () {
+
+                    this.onerror = null;
+
+                    this.src =
+                        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+                };
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
        PLACEHOLDER LINK PROTECTION
     ===================================================== */
 
@@ -152,7 +298,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach(element => {
+
         element.classList.add("reveal");
+
     });
 
 
@@ -196,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const targetID = this.getAttribute("href");
 
+
             if (
                 !targetID ||
                 targetID === "#" ||
@@ -204,22 +353,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+
             event.preventDefault();
 
-            const target = document.querySelector(targetID);
 
-            const navbarHeight = navbar
-                ? navbar.offsetHeight
-                : 0;
+            const target =
+                document.querySelector(targetID);
+
+
+            const navbarHeight =
+                navbar
+                    ? navbar.offsetHeight
+                    : 0;
+
 
             const targetPosition =
                 target.getBoundingClientRect().top +
                 window.scrollY -
                 navbarHeight;
 
+
             window.scrollTo({
+
                 top: targetPosition,
+
                 behavior: "smooth"
+
             });
 
         });
@@ -231,7 +390,9 @@ document.addEventListener("DOMContentLoaded", () => {
        CURRENT YEAR
     ===================================================== */
 
-    const yearElement = document.getElementById("year");
+    const yearElement =
+        document.getElementById("year");
+
 
     if (yearElement) {
 
