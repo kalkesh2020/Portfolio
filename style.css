@@ -1306,4 +1306,34 @@ footer {
         text-align: center;
     }
 
+
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.youtube-thumbnail {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+}
+
+.project-image .image-overlay {
+    z-index: 1;
+}
+
+.project-image .project-play,
+.project-image .project-type,
+.project-image .project-arrow {
+    z-index: 2;
+}
+
+
+
+
 }
