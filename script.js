@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleNavbar() {
 
+        if (!navbar) return;
+
         if (window.scrollY > 30) {
             navbar.classList.add("scrolled");
         } else {
@@ -61,20 +63,27 @@ document.addEventListener("DOMContentLoaded", () => {
        WORK FILTER
     ===================================================== */
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const projectCards =
+        document.querySelectorAll(".project-card");
+
 
     filterButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const selectedCategory = button.dataset.filter;
+            const selectedCategory =
+                button.dataset.filter;
 
 
             /* Remove active state */
 
             filterButtons.forEach(btn => {
+
                 btn.classList.remove("active");
+
             });
 
 
@@ -87,7 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             projectCards.forEach(card => {
 
-                const category = card.dataset.category;
+                const category =
+                    card.dataset.category;
+
 
                 if (
                     selectedCategory === "all" ||
@@ -113,20 +124,30 @@ document.addEventListener("DOMContentLoaded", () => {
        YOUTUBE THUMBNAIL AUTO LOAD
     ===================================================== */
 
-    const youtubeLinks = document.querySelectorAll(
-        ".project-card a.project-link"
-    );
+    const youtubeLinks =
+        document.querySelectorAll(
+            ".project-card a.project-link"
+        );
 
 
     youtubeLinks.forEach(link => {
 
-        const href = link.getAttribute("href");
+        const href =
+            link.getAttribute("href");
 
-        /* Ignore empty and placeholder links */
+
+        /* Ignore empty links */
+
+        if (!href) {
+            return;
+        }
+
+
+        /* Ignore placeholder links */
 
         if (
-            !href ||
-            href.includes("PASTE_")
+            href.includes("PASTE_") ||
+            href === "#"
         ) {
             return;
         }
@@ -143,25 +164,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const url = new URL(href);
 
-            const hostname = url.hostname.replace("www.", "");
+            const hostname =
+                url.hostname
+                    .replace(/^www\./, "")
+                    .toLowerCase();
 
 
-            /* youtu.be/VIDEO_ID */
+            /* ---------------------------------------------
+               youtu.be/VIDEO_ID
+            --------------------------------------------- */
 
             if (hostname === "youtu.be") {
 
-                videoId = url.pathname.substring(1);
+                videoId =
+                    url.pathname
+                        .split("/")
+                        .filter(Boolean)[0] || null;
 
             }
 
 
-            /* youtube.com/... */
+            /* ---------------------------------------------
+               youtube.com
+            --------------------------------------------- */
 
-            else if (hostname === "youtube.com") {
+            else if (
+                hostname === "youtube.com" ||
+                hostname === "m.youtube.com"
+            ) {
+
 
                 /* YouTube Shorts */
 
-                if (url.pathname.startsWith("/shorts/")) {
+                if (
+                    url.pathname.startsWith("/shorts/")
+                ) {
 
                     videoId =
                         url.pathname
@@ -175,24 +212,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 else {
 
-                    videoId = url.searchParams.get("v");
+                    videoId =
+                        url.searchParams.get("v");
 
                 }
 
             }
 
+
         } catch (error) {
 
-            console.log(
+            console.error(
                 "Could not read YouTube link:",
-                href
+                href,
+                error
             );
 
         }
 
 
         /* =================================================
-           LOAD THUMBNAIL
+           CLEAN VIDEO ID
+        ================================================= */
+
+        if (videoId) {
+
+            videoId =
+                videoId
+                    .split("?")[0]
+                    .split("&")[0]
+                    .trim();
+
+        }
+
+
+        /* =================================================
+           CREATE THUMBNAIL
         ================================================= */
 
         if (videoId) {
@@ -201,54 +256,82 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.querySelector(".project-image");
 
 
-            if (imageContainer) {
-
-                /* Clean video ID */
-
-                videoId =
-                    videoId
-                        .split("?")[0]
-                        .split("&")[0];
+            if (!imageContainer) {
+                return;
+            }
 
 
-                /* Create thumbnail */
+            /* Prevent duplicate thumbnails */
 
-                const thumbnail =
-                    document.createElement("img");
-
-
-                thumbnail.src =
-                    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-
-
-                thumbnail.alt =
-                    "YouTube Video Thumbnail";
+            if (
+                imageContainer.querySelector(
+                    ".youtube-thumbnail"
+                )
+            ) {
+                return;
+            }
 
 
-                thumbnail.className =
-                    "youtube-thumbnail";
+            /* Create image */
+
+            const thumbnail =
+                document.createElement("img");
 
 
-                /* Add thumbnail */
+            thumbnail.className =
+                "youtube-thumbnail";
 
-                imageContainer.prepend(thumbnail);
+
+            thumbnail.alt =
+                "YouTube Video Thumbnail";
 
 
-                /* =================================================
-                   FALLBACK THUMBNAIL
-                   If maxresdefault is unavailable
-                ================================================= */
+            thumbnail.loading =
+                "lazy";
 
-                thumbnail.onerror = function () {
 
-                    this.onerror = null;
+            thumbnail.decoding =
+                "async";
+
+
+            /* ---------------------------------------------
+               FIRST THUMBNAIL
+            --------------------------------------------- */
+
+            thumbnail.src =
+                `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+
+            /* ---------------------------------------------
+               FALLBACK
+            --------------------------------------------- */
+
+            thumbnail.onerror = function () {
+
+                /*
+                    maxresdefault is not available
+                    so use hqdefault.
+                */
+
+                if (
+                    !this.dataset.fallback
+                ) {
+
+                    this.dataset.fallback = "true";
 
                     this.src =
                         `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
-                };
+                }
 
-            }
+            };
+
+
+            /* Add thumbnail FIRST */
+
+            imageContainer.prepend(
+                thumbnail
+            );
 
         }
 
@@ -259,13 +342,19 @@ document.addEventListener("DOMContentLoaded", () => {
        PLACEHOLDER LINK PROTECTION
     ===================================================== */
 
-    const links = document.querySelectorAll("a");
+    const links =
+        document.querySelectorAll("a");
+
 
     links.forEach(link => {
 
-        const href = link.getAttribute("href");
+        const href =
+            link.getAttribute("href");
 
-        if (!href) return;
+
+        if (!href) {
+            return;
+        }
 
 
         if (
@@ -273,15 +362,18 @@ document.addEventListener("DOMContentLoaded", () => {
             href === "#"
         ) {
 
-            link.addEventListener("click", (event) => {
+            link.addEventListener(
+                "click",
+                event => {
 
-                event.preventDefault();
+                    event.preventDefault();
 
-                alert(
-                    "Add your YouTube or website link here in index.html."
-                );
+                    alert(
+                        "Add your YouTube or website link here in index.html."
+                    );
 
-            });
+                }
+            );
 
         }
 
@@ -292,9 +384,19 @@ document.addEventListener("DOMContentLoaded", () => {
        SCROLL REVEAL
     ===================================================== */
 
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .project-card, .about-content, .about-image, .experience-item, .skill-card, .tool-group, .ai-card, .design-item, .contact-wrapper"
-    );
+    const revealElements =
+        document.querySelectorAll(
+            ".section-heading, " +
+            ".project-card, " +
+            ".about-content, " +
+            ".about-image, " +
+            ".experience-item, " +
+            ".skill-card, " +
+            ".tool-group, " +
+            ".ai-card, " +
+            ".design-item, " +
+            ".contact-wrapper"
+        );
 
 
     revealElements.forEach(element => {
@@ -304,27 +406,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    const observer = new IntersectionObserver(
-        (entries, observerInstance) => {
+    /* =====================================================
+       INTERSECTION OBSERVER
+    ===================================================== */
 
-            entries.forEach(entry => {
+    const observer =
+        new IntersectionObserver(
+            (entries, observerInstance) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    entry.target.classList.add("visible");
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    observerInstance.unobserve(entry.target);
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-                }
 
-            });
+                        observerInstance.unobserve(
+                            entry.target
+                        );
 
-        },
-        {
-            threshold: 0.08,
-            rootMargin: "0px 0px -50px 0px"
-        }
-    );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.08,
+
+                rootMargin:
+                    "0px 0px -50px 0px"
+            }
+        );
 
 
     revealElements.forEach(element => {
@@ -338,52 +454,65 @@ document.addEventListener("DOMContentLoaded", () => {
        SMOOTH ANCHOR SCROLL
     ===================================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(anchor => {
 
-        anchor.addEventListener("click", function (event) {
+            anchor.addEventListener(
+                "click",
+                function (event) {
 
-            const targetID = this.getAttribute("href");
-
-
-            if (
-                !targetID ||
-                targetID === "#" ||
-                !document.querySelector(targetID)
-            ) {
-                return;
-            }
+                    const targetID =
+                        this.getAttribute("href");
 
 
-            event.preventDefault();
+                    if (
+                        !targetID ||
+                        targetID === "#" ||
+                        !document.querySelector(
+                            targetID
+                        )
+                    ) {
+
+                        return;
+
+                    }
 
 
-            const target =
-                document.querySelector(targetID);
+                    event.preventDefault();
 
 
-            const navbarHeight =
-                navbar
-                    ? navbar.offsetHeight
-                    : 0;
+                    const target =
+                        document.querySelector(
+                            targetID
+                        );
 
 
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                navbarHeight;
+                    const navbarHeight =
+                        navbar
+                            ? navbar.offsetHeight
+                            : 0;
 
 
-            window.scrollTo({
+                    const targetPosition =
+                        target.getBoundingClientRect()
+                            .top +
+                        window.scrollY -
+                        navbarHeight;
 
-                top: targetPosition,
 
-                behavior: "smooth"
+                    window.scrollTo({
 
-            });
+                        top: targetPosition,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+            );
 
         });
-
-    });
 
 
     /* =====================================================
@@ -400,6 +529,5 @@ document.addEventListener("DOMContentLoaded", () => {
             new Date().getFullYear();
 
     }
-
 
 });
